@@ -1,0 +1,34 @@
+---
+title: "Milestone 3"
+author: "Amanda Su"
+date: "10/3/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(tidyverse)
+library(readxl)
+library(janitor)
+
+outbound <- read_xls("raw-data/outbound.xls", skip = 4) 
+inbound <- read_xls("raw-data/inbound.xls", skip = 4)
+gdp <- read_xls("raw-data/gdp.xls", skip = 4)
+gov_education <- read_xls("raw-data/gov-expend-education.xls", skip = 4)
+
+```
+
+**Dataset: outbound**
+I got this dataset from UNESCO and it shows the number of outbound internationally mobile students by host region (country) from 2013 to 2019. 
+
+**Dataset: inbound**
+I got this dataset from UNESCO and it shows the number of inbound internationally mobile students by host region (country) from 2013 to 2019.
+
+**Dataset: gdp**
+I got this dataset from UNESCO and it shows the the GDP (USD) from 2013 to 2019 by country. 
+
+**Dataset: gov_education**
+I got this dataset from UNESCO and it shows the government expenditure on education as a percentage of GDP by country from 2013 to 2019.
+
+So far, I have read in all the datasets to R Studio. The formatting is a little messed up (i.e., the names of the columns, missing values, unnecessary rows and columns) so I plan on cleaning it up more. By joining the four datasets, I'm hoping to determine whether or not the wealth of a sending country (GDP) and the government expenditures on education in the receiving country could have any relationship with the number of students who choose to study abroad in specific countries and where they choose to study abroad.
